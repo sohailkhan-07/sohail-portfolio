@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohail Khan - Digital Marketing Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles to match the portfolio design */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a2e; /* Dark blue-ish background */
+            color: #e0e0e0; /* Light grey text */
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #a855f7, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #a855f7; /* Purple accent */
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        .glassmorphism {
+            background: rgba(40, 42, 60, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+        .skill-bar-bg {
+            background-color: #3c3c5a;
+        }
+        .skill-bar-fill {
+            background: linear-gradient(90deg, #facc15, #a855f7);
+        }
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.1;
+            filter: blur(40px);
+        }
+        /* Modal styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+        .modal-content {
+            background-color: #1a1a2e;
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #a855f7;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="relative overflow-x-hidden">
+
+    <!-- Decorative Background Elements -->
+    <div class="decorative-circle bg-purple-500 w-96 h-96 top-[-10rem] left-[-10rem]"></div>
+    <div class="decorative-circle bg-yellow-300 w-80 h-80 top-[20rem] right-[-15rem]"></div>
+    <div class="decorative-circle bg-teal-400 w-72 h-72 top-[70rem] left-[-12rem]"></div>
+    <div class="decorative-circle bg-purple-500 w-96 h-96 bottom-[-10rem] right-[-10rem]"></div>
+
+    <!-- Header & Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">Sohail Khan</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-white transition">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-white transition">Projects</a>
+                <a href="#experience" class="text-gray-300 hover:text-white transition">Experience</a>
+                <a href="#contact" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition">Contact Me</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-[#1a1a2e] z-40 pt-20">
+        <div class="flex flex-col items-center space-y-8 text-xl">
+            <a href="#about" class="mobile-menu-link text-gray-300 hover:text-white transition">About</a>
+            <a href="#skills" class="mobile-menu-link text-gray-300 hover:text-white transition">Skills</a>
+            <a href="#projects" class="mobile-menu-link text-gray-300 hover:text-white transition">Projects</a>
+            <a href="#experience" class="mobile-menu-link text-gray-300 hover:text-white transition">Experience</a>
+            <a href="#contact" class="mobile-menu-link bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition">Contact Me</a>
+        </div>
+    </div>
+
+
+    <main class="container mx-auto px-6 z-10 relative">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+            <div class="text-center md:text-left flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl text-gray-400">Hello Everyone.</h2>
+                    <h1 class="text-5xl md:text-7xl font-extrabold my-4">I'm <span class="gradient-text">Sohail Khan</span></h1>
+                    <p class="text-2xl text-teal-300 font-semibold">Digital Marketing Specialist</p>
+                    <a href="#projects" class="mt-8 inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-transform duration-300 hover:scale-105">
+                        View My Work &rarr;
+                    </a>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-80 h-80">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600 to-teal-400 rounded-full blur-xl opacity-50"></div>
+                        <img src="https://i.postimg.cc/zXL7Yrqx/sohail-digital.jpg" alt="Sohail Khan" class="relative w-full h-full object-cover rounded-full shadow-2xl border-4 border-purple-500/50">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20">
+            <h2 class="section-title">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12 glassmorphism p-8">
+                <div class="md:w-1/3 flex justify-center">
+                    <img src="https://i.postimg.cc/dtqbvDhJ/a-captivating-fashion-photograph-focusin-A4-KMC26-RRcml-TXTP0d-YXvw-y-YW9em-Lf-QLu5-YBJBi-VHZ-g.jpg" alt="About Sohail Khan" class="w-64 h-64 object-cover rounded-full shadow-lg">
+                </div>
+                <div class="md:w-2/3 text-lg text-gray-300">
+                    <div id="about-content">
+                        <p id="original-bio">
+                            I am a passionate digital marketing professional with expertise in social media campaigns, graphic design, and video editing. My experience at Aps Star Pvt. Ltd. has strengthened my ability to boost brand engagement and create impactful marketing strategies. I am committed to staying ahead of marketing trends and continually enhancing my skills. With a creative mindset and results-driven approach, I aim to make meaningful contributions in the dynamic digital marketing space.
+                        </p>
+                    </div>
+                    <div class="mt-6">
+                        <p class="font-semibold mb-3 text-white">✨ Let AI rewrite my bio:</p>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="rewriteBio('as a formal proposal')" class="bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold py-2 px-4 rounded-lg transition">Formal Proposal</button>
+                            <button onclick="rewriteBio('as a creative pitch')" class="bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold py-2 px-4 rounded-lg transition">Creative Pitch</button>
+                            <button onclick="rewriteBio('as a casual intro')" class="bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold py-2 px-4 rounded-lg transition">Casual Intro</button>
+                            <button onclick="resetBio()" class="bg-gray-600 hover:bg-gray-700 text-white text-sm font-bold py-2 px-4 rounded-lg transition hidden" id="reset-bio-btn">Reset Bio</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <h2 class="section-title">Personal Skills</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glassmorphism p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-white">Technical Skills</h3>
+                    <p class="text-gray-400 mb-6">Proficient in digital marketing strategies, including social media management, content creation, and campaign optimization.</p>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="flex justify-between items-center font-semibold mb-1"><span>Digital Marketing</span> <span>95%</span></p>
+                            <div class="w-full skill-bar-bg rounded-full h-3">
+                                <div class="skill-bar-fill h-3 rounded-full" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="flex justify-between items-center font-semibold mb-1"><span>Graphic Designer</span> <span>90%</span></p>
+                            <div class="w-full skill-bar-bg rounded-full h-3">
+                                <div class="skill-bar-fill h-3 rounded-full" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="flex justify-between items-center font-semibold mb-1"><span>Video Editor</span> <span>75%</span></p>
+                            <div class="w-full skill-bar-bg rounded-full h-3">
+                                <div class="skill-bar-fill h-3 rounded-full" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="glassmorphism p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-white">My Work Profile</h3>
+                     <div class="space-y-4">
+                        <div>
+                            <h4 class="text-xl font-semibold text-teal-300">Digital Marketing</h4>
+                            <p class="text-gray-400">Skilled in internet research, website rank analysis, and creating impactful social media ads across platforms like Google, Facebook, and LinkedIn. Proficient in email marketing (Mailchimp, HubSpot, ZOHO) and crafting effective social media strategies for brand growth.</p>
+                        </div>
+                         <div>
+                            <h4 class="text-xl font-semibold text-teal-300">Graphic Designer</h4>
+                            <p class="text-gray-400">Crafted eye-catching graphics for a range of digital assets and print media. Created user-centric UI/UX designs to enhance customer engagement. Developed branding materials, including logos, banners, and marketing collateral.</p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="section-title">Recent Projects</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-gray-400">Successfully managed a digital campaign for a festival, creating engaging social media content, boosting audience engagement by 30%, and enhancing brand visibility through innovative design and strategy.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glassmorphism p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://i.postimg.cc/Gmq51SVx/PIZZA.png" alt="Branding Design" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-xl font-bold text-white">Branding Design</h3>
+                </div>
+                <div class="glassmorphism p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <video autoplay loop muted class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <source src="AAPKI_VIDEO_KA_LINK_YAHAN_DAALEIN.mp4" type="video/mp4">
+                        Aapka browser video tag ko support nahi karta.
+                    </video>
+                    <h3 class="text-xl font-bold text-white">Invitation Video</h3>
+                </div>
+                <div class="glassmorphism p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/3c3c5a/ffffff?text=Social+Posts" alt="Regular Posts" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-xl font-bold text-white">Regular Social Posts</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Section -->
+        <section id="experience" class="py-20">
+            <h2 class="section-title">My Journey</h2>
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-3xl font-bold mb-8 text-center text-white">Work Experience</h3>
+                    <div class="relative border-l-2 border-purple-500 pl-8 space-y-12">
+                        <div class="relative">
+                            <div class="absolute -left-[42px] top-1 w-5 h-5 bg-teal-400 rounded-full border-4 border-[#1a1a2e]"></div>
+                            <p class="text-purple-400 font-semibold">2024</p>
+                            <h4 class="text-xl font-bold text-white">Office Work | Aps Star Pvt. Ltd.</h4>
+                            <p class="text-gray-400">Designed and implemented a social media campaign that increased follower growth by 65% in three months. Designed visually compelling graphics for digital and print mediums.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[42px] top-1 w-5 h-5 bg-teal-400 rounded-full border-4 border-[#1a1a2e]"></div>
+                            <p class="text-purple-400 font-semibold">2022</p>
+                            <h4 class="text-xl font-bold text-white">Freelance Work | Part-time</h4>
+                            <p class="text-gray-400">Part-time freelancer specializing in digital marketing, graphic design, and video editing, delivering creative and impactful solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold mb-8 text-center text-white">Education</h3>
+                    <div class="relative border-l-2 border-purple-500 pl-8 space-y-12">
+                        <div class="relative">
+                           <div class="absolute -left-[42px] top-1 w-5 h-5 bg-teal-400 rounded-full border-4 border-[#1a1a2e]"></div>
+                            <p class="text-purple-400 font-semibold">2026 (Expected)</p>
+                            <h4 class="text-xl font-bold text-white">Under Graduation with B.A.</h4>
+                            <p class="text-gray-400">Delhi University</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[42px] top-1 w-5 h-5 bg-teal-400 rounded-full border-4 border-[#1a1a2e]"></div>
+                            <p class="text-purple-400 font-semibold">2023</p>
+                            <h4 class="text-xl font-bold text-white">Computer Advance Diploma Course</h4>
+                            <p class="text-gray-400">Amroz Institute</p>
+                        </div>
+                        <div class="relative">
+                           <div class="absolute -left-[42px] top-1 w-5 h-5 bg-teal-400 rounded-full border-4 border-[#1a1a2e]"></div>
+                            <p class="text-purple-400 font-semibold">2022</p>
+                            <h4 class="text-xl font-bold text-white">Secondary High Education</h4>
+                            <p class="text-gray-400">C.B.S.C Board</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements & Certifications Section -->
+        <section id="achievements" class="py-20">
+            <h2 class="section-title">Achievements & Certifications</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <!-- Achievement Item 1 -->
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 rounded-full flex items-center justify-center bg-purple-500/20 mb-4">
+                        <i data-lucide="camera" class="w-12 h-12 text-purple-300"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-white">Best Photography</h3>
+                    <p class="text-gray-400">2021</p>
+                </div>
+                <!-- Achievement Item 2 -->
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 rounded-full flex items-center justify-center bg-green-500/20 mb-4">
+                        <i data-lucide="shield" class="w-12 h-12 text-green-300"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-white">Best Cadet (NCC)</h3>
+                    <p class="text-gray-400">2023</p>
+                </div>
+                <!-- Achievement Item 3 -->
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 rounded-full flex items-center justify-center bg-blue-500/20 mb-4">
+                        <i data-lucide="award" class="w-12 h-12 text-blue-300"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-white">Google Ads Certified</h3>
+                    <p class="text-gray-400">Certification</p>
+                </div>
+                <!-- Achievement Item 4 -->
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 rounded-full flex items-center justify-center bg-yellow-500/20 mb-4">
+                        <i data-lucide="trending-up" class="w-12 h-12 text-yellow-300"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-white">Trading Certificate</h3>
+                    <p class="text-gray-400">Financial Markets</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glassmorphism p-8">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/100x100/3c3c5a/ffffff?text=IFA" alt="India Fine Arts" class="w-16 h-16 rounded-full mr-4 border-2 border-purple-400">
+                        <div>
+                            <h4 class="text-xl font-bold text-white">INDIA FINE ARTS</h4>
+                            <p class="text-gray-400">Our Client</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"India Fine Arts Company appreciates Sohail for their outstanding freelance work, creating a captivating motion graphic video for social media. Their creativity and attention to detail significantly enhanced the brand's online presence."</p>
+                </div>
+                <div class="glassmorphism p-8">
+                     <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/100x100/3c3c5a/ffffff?text=APS" alt="APS Star" class="w-16 h-16 rounded-full mr-4 border-2 border-purple-400">
+                        <div>
+                            <h4 class="text-xl font-bold text-white">APS STAR</h4>
+                            <p class="text-gray-400">Our Client</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Aps Star commends Sohail for their exceptional creativity and dedication as a Social Media Manager, Video Maker, Digital Marketing Specialist, and Graphic Designer. Their work consistently enhanced brand engagement and achieved impressive campaign results."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white">Let's Create Together</h2>
+                <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">I'm always excited to discuss new projects and collaboration opportunities. Feel free to reach out!</p>
+            </div>
+            <div class="max-w-5xl mx-auto bg-gray-900/50 backdrop-blur-lg border border-gray-700/50 rounded-2xl p-8 md:p-12 grid md:grid-cols-2 gap-12">
+                <!-- Left Column: Contact Info -->
+                <div class="space-y-8">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-purple-900/50 p-3 rounded-full">
+                            <i data-lucide="phone" class="w-6 h-6 text-purple-300"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Phone</h4>
+                            <a href="tel:+919911502635" class="text-gray-300 hover:text-purple-300 transition">+91-9911502635</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-purple-900/50 p-3 rounded-full">
+                            <i data-lucide="mail" class="w-6 h-6 text-purple-300"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Email</h4>
+                            <a href="mailto:mrsohailkhan131@gmail.com" class="text-gray-300 hover:text-purple-300 transition">mrsohailkhan131@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-purple-900/50 p-3 rounded-full">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-purple-300"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Location</h4>
+                            <p class="text-gray-300">Rohini, New Delhi, India</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.instagram.com/__sohailkhan07__" target="_blank" class="text-gray-400 hover:text-purple-300 transition"><i data-lucide="instagram" class="w-7 h-7"></i></a>
+                            <a href="https://www.linkedin.com/in/sohail-khan-62b790326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-gray-400 hover:text-purple-300 transition"><i data-lucide="linkedin" class="w-7 h-7"></i></a>
+                            <a href="#" target="_blank" class="text-gray-400 hover:text-purple-300 transition"><i data-lucide="twitter" class="w-7 h-7"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Column: Form -->
+                <div>
+                     <!-- Form submissions are sent to your email via FormSubmit -->
+                     <form id="contact-form" action="https://formsubmit.co/mrsohailkhan131@gmail.com" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-left mb-2 font-semibold text-white">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-gray-800/70 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-left mb-2 font-semibold text-white">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required class="w-full p-3 rounded-lg bg-gray-800/70 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition">
+                        </div>
+                        <div>
+                            <label for="contact-message" class="block text-left mb-2 font-semibold text-white">Message</label>
+                            <textarea id="contact-message" name="message" rows="5" placeholder="How can I help you?" required class="w-full p-3 rounded-lg bg-gray-800/70 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"></textarea>
+                        </div>
+                        <div class="text-right">
+                             <button type="button" id="draft-email-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-lg transition mr-2">✨ Draft with AI</button>
+                             <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 border-t border-gray-800">
+        <p class="text-gray-500">&copy; 2025 Sohail Khan. Designed with &hearts; and code.</p>
+    </footer>
+
+    <!-- Loading Modal -->
+    <div id="loading-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="loader"></div>
+            <p class="mt-4 text-white">Generating with AI...</p>
+        </div>
+    </div>
+    
+    <!-- Message Modal -->
+    <div id="message-modal" class="modal-overlay hidden">
+        <div id="message-modal-content" class="modal-content">
+             <p id="message-text" class="text-white"></p>
+             <button id="close-message-modal" class="mt-4 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg">Close</button>
+        </div>
+    </div>
+
+
+    <script type="module">
+        // --- Basic Setup ---
+        lucide.createIcons();
+
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-[#1a1a2e]/80', 'backdrop-blur-sm', 'shadow-lg');
+            } else {
+                header.classList.remove('bg-[#1a1a2e]/80', 'backdrop-blur-sm', 'shadow-lg');
+            }
+        });
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenuLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // --- Gemini API Integration ---
+
+        const API_KEY = ""; // Leave empty, it will be handled by the environment
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${API_KEY}`;
+        
+        const loadingModal = document.getElementById('loading-modal');
+        const messageModal = document.getElementById('message-modal');
+        const messageText = document.getElementById('message-text');
+        const closeMessageModalBtn = document.getElementById('close-message-modal');
+
+        const showLoading = () => loadingModal.classList.remove('hidden');
+        const hideLoading = () => loadingModal.classList.add('hidden');
+        
+        const showMessage = (message) => {
+            messageText.textContent = message;
+            messageModal.classList.remove('hidden');
+        }
+        closeMessageModalBtn.addEventListener('click', () => messageModal.classList.add('hidden'));
+
+
+        // Function to call Gemini API with exponential backoff
+        async function callGemini(prompt, maxRetries = 3) {
+            showLoading();
+            let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+            const payload = { contents: chatHistory };
+
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(API_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    hideLoading();
+                    
+                    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content.parts[0].text) {
+                        return result.candidates[0].content.parts[0].text;
+                    } else {
+                        throw new Error("Invalid response structure from API.");
+                    }
+
+                } catch (error) {
+                    console.error(`Attempt ${i + 1} failed:`, error);
+                    if (i === maxRetries - 1) {
+                        hideLoading();
+                        showMessage("Sorry, the AI is unable to respond right now. Please try again later.");
+                        return null;
+                    }
+                    await new Promise(resolve => setTimeout(resolve, (2 ** i) * 1000)); // Exponential backoff
+                }
+            }
+        }
+
+        // --- Feature 1: Bio Rewriter ---
+        const aboutContent = document.getElementById('about-content');
+        const originalBioHTML = aboutContent.innerHTML;
+        const resetBioBtn = document.getElementById('reset-bio-btn');
+        const originalBioText = document.getElementById('original-bio').textContent.trim();
+
+        window.rewriteBio = async (style) => {
+            const prompt = `Rewrite the following biography for a digital marketer to have the tone of ${style}. Keep it professional and about the same length. Biography: "${originalBioText}"`;
+            
+            const newBio = await callGemini(prompt);
+            if (newBio) {
+                aboutContent.innerHTML = `<p>${newBio}</p>`;
+                resetBioBtn.classList.remove('hidden');
+            }
+        };
+
+        window.resetBio = () => {
+            aboutContent.innerHTML = originalBioHTML;
+            resetBioBtn.classList.add('hidden');
+        };
+
+        // --- Feature 2: Contact Form AI Draft ---
+        const contactMessageTextarea = document.getElementById('contact-message');
+        const draftEmailBtn = document.getElementById('draft-email-btn');
+        
+        draftEmailBtn.addEventListener('click', async () => {
+            const currentMessage = contactMessageTextarea.value.trim();
+            if (currentMessage.length < 10) {
+                showMessage("Please write a few words about your project first.");
+                return;
+            }
+            const prompt = `A potential client wants to contact a digital marketer. Their initial thought is: "${currentMessage}". Rewrite this into a clear, professional, and friendly outreach email. The email should briefly state their purpose, mention what they are looking for, and suggest the next step (like a brief call). Do not include a subject line or signature.`;
+            
+            const draftedEmail = await callGemini(prompt);
+            if (draftedEmail) {
+                contactMessageTextarea.value = draftedEmail;
+            }
+        });
+        
+    </script>
+</body>
+</html>
