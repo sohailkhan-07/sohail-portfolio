@@ -161,18 +161,16 @@
                     <img src="https://i.postimg.cc/dtqbvDhJ/a-captivating-fashion-photograph-focusin-A4-KMC26-RRcml-TXTP0d-YXvw-y-YW9em-Lf-QLu5-YBJBi-VHZ-g.jpg" alt="About Sohail Khan" class="w-64 h-64 object-cover rounded-full shadow-lg">
                 </div>
                 <div class="md:w-2/3 text-lg text-gray-300">
-                    <div id="about-content">
-                        <p id="original-bio">
-                            I am a passionate digital marketing professional with expertise in social media campaigns, graphic design, and video editing. My experience at Aps Star Pvt. Ltd. has strengthened my ability to boost brand engagement and create impactful marketing strategies. I am committed to staying ahead of marketing trends and continually enhancing my skills. With a creative mindset and results-driven approach, I aim to make meaningful contributions in the dynamic digital marketing space.
-                        </p>
-                    </div>
-                    <div class="mt-6">
-                        <p class="font-semibold mb-3 text-white">✨ Let AI rewrite my bio:</p>
-                        <div class="flex flex-wrap gap-3">
-                            <button onclick="rewriteBio('as a formal proposal')" class="bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold py-2 px-4 rounded-lg transition">Formal Proposal</button>
-                            <button onclick="rewriteBio('as a creative pitch')" class="bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold py-2 px-4 rounded-lg transition">Creative Pitch</button>
-                            <button onclick="rewriteBio('as a casual intro')" class="bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold py-2 px-4 rounded-lg transition">Casual Intro</button>
-                            <button onclick="resetBio()" class="bg-gray-600 hover:bg-gray-700 text-white text-sm font-bold py-2 px-4 rounded-lg transition hidden" id="reset-bio-btn">Reset Bio</button>
+                    <p>
+                        I am a passionate digital marketing professional with expertise in social media campaigns, graphic design, and video editing. My experience at Aps Star Pvt. Ltd. has strengthened my ability to boost brand engagement and create impactful marketing strategies. I am committed to staying ahead of marketing trends and continually enhancing my skills. With a creative mindset and results-driven approach, I aim to make meaningful contributions in the dynamic digital marketing space.
+                    </p>
+                    <div class="mt-6 pt-6 border-t border-gray-700/50">
+                        <h4 class="text-xl font-bold text-white mb-4">My Core Services</h4>
+                        <div class="flex flex-wrap gap-4 text-sm">
+                            <span class="bg-teal-900/70 text-teal-200 py-1 px-3 rounded-full">Social Media Campaigns</span>
+                            <span class="bg-teal-900/70 text-teal-200 py-1 px-3 rounded-full">Graphic Design</span>
+                            <span class="bg-teal-900/70 text-teal-200 py-1 px-3 rounded-full">Video Editing</span>
+                            <span class="bg-teal-900/70 text-teal-200 py-1 px-3 rounded-full">Brand Strategy</span>
                         </div>
                     </div>
                 </div>
@@ -532,28 +530,7 @@
             }
         }
 
-        // --- Feature 1: Bio Rewriter ---
-        const aboutContent = document.getElementById('about-content');
-        const originalBioHTML = aboutContent.innerHTML;
-        const resetBioBtn = document.getElementById('reset-bio-btn');
-        const originalBioText = document.getElementById('original-bio').textContent.trim();
-
-        window.rewriteBio = async (style) => {
-            const prompt = `Rewrite the following biography for a digital marketer to have the tone of ${style}. Keep it professional and about the same length. Biography: "${originalBioText}"`;
-            
-            const newBio = await callGemini(prompt);
-            if (newBio) {
-                aboutContent.innerHTML = `<p>${newBio}</p>`;
-                resetBioBtn.classList.remove('hidden');
-            }
-        };
-
-        window.resetBio = () => {
-            aboutContent.innerHTML = originalBioHTML;
-            resetBioBtn.classList.add('hidden');
-        };
-
-        // --- Feature 2: Contact Form AI Draft ---
+        // --- Contact Form AI Draft ---
         const contactMessageTextarea = document.getElementById('contact-message');
         const draftEmailBtn = document.getElementById('draft-email-btn');
         
