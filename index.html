@@ -10,11 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Custom styles to match the portfolio design */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a1a2e; /* Dark blue-ish background */
-            color: #e0e0e0; /* Light grey text */
+            background-color: #1a1a2e;
+            color: #e0e0e0;
         }
         .gradient-text {
             background: linear-gradient(90deg, #a855f7, #60a5fa);
@@ -33,7 +32,7 @@
             display: block;
             width: 80px;
             height: 4px;
-            background-color: #a855f7; /* Purple accent */
+            background-color: #a855f7;
             margin: 10px auto 0;
             border-radius: 2px;
         }
@@ -96,7 +95,7 @@
 </head>
 <body class="relative overflow-x-hidden">
 
-    <!-- Decorative Background Elements -->
+    <!-- Background Circles -->
     <div class="decorative-circle bg-purple-500 w-96 h-96 top-[-10rem] left-[-10rem]"></div>
     <div class="decorative-circle bg-yellow-300 w-80 h-80 top-[20rem] right-[-15rem]"></div>
     <div class="decorative-circle bg-teal-400 w-72 h-72 top-[70rem] left-[-12rem]"></div>
@@ -161,17 +160,10 @@
                     <img src="https://i.postimg.cc/dtqbvDhJ/a-captivating-fashion-photograph-focusin-A4-KMC26-RRcml-TXTP0d-YXvw-y-YW9em-Lf-QLu5-YBJBi-VHZ-g.jpg" alt="About Sohail Khan" class="w-64 h-64 object-cover rounded-full shadow-lg">
                 </div>
                 <div class="md:w-2/3 text-lg text-gray-300">
-                    <p>
-                        I am a passionate digital marketing professional with expertise in social media campaigns, graphic design, and video editing. My experience at Aps Star Pvt. Ltd. has strengthened my ability to boost brand engagement and create impactful marketing strategies. I am committed to staying ahead of marketing trends and continually enhancing my skills. With a creative mindset and results-driven approach, I aim to make meaningful contributions in the dynamic digital marketing space.
-                    </p>
-                    <div class="mt-6 pt-6 border-t border-gray-700/50">
-                        <h4 class="text-xl font-bold text-white mb-4">My Core Services</h4>
-                        <div class="flex flex-wrap gap-4 text-sm">
-                            <span class="bg-teal-900/70 text-teal-200 py-1 px-3 rounded-full">Social Media Campaigns</span>
-                            <span class="bg-teal-900/70 text-teal-200 py-1 px-3 rounded-full">Graphic Design</span>
-                            <span class="bg-teal-900/70 text-teal-200 py-1 px-3 rounded-full">Video Editing</span>
-                            <span class="bg-teal-900/70 text-teal-200 py-1 px-3 rounded-full">Brand Strategy</span>
-                        </div>
+                    <div id="about-content">
+                        <p id="original-bio">
+                            I am a passionate digital marketing professional with expertise in social media campaigns, graphic design, and video editing. My experience at Aps Star Pvt. Ltd. has strengthened my ability to boost brand engagement and create impactful marketing strategies. I am committed to staying ahead of marketing trends and continually enhancing my skills. With a creative mindset and results-driven approach, I aim to make meaningful contributions in the dynamic digital marketing space.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -226,25 +218,33 @@
             <h2 class="section-title">Recent Projects</h2>
             <p class="text-center max-w-3xl mx-auto mb-12 text-gray-400">Successfully managed a digital campaign for a festival, creating engaging social media content, boosting audience engagement by 30%, and enhancing brand visibility through innovative design and strategy.</p>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="glassmorphism p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://i.postimg.cc/Gmq51SVx/PIZZA.png" alt="Branding Design" class="rounded-lg mb-4 w-full h-48 object-cover">
-                    <h3 class="text-xl font-bold text-white">Branding Design</h3>
+                <!-- Branding Design -->
+                <div class="glassmorphism p-6 text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full">
+                    <img src="https://i.postimg.cc/Gmq51SVx/PIZZA.png" alt="Branding Design" class="rounded-lg mb-4 w-full h-64 object-cover">
+                    <h3 class="text-xl font-bold text-white mt-auto">Branding Design</h3>
                 </div>
-                <div class="glassmorphism p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
-                    <video autoplay loop muted class="rounded-lg mb-4 w-full h-48 object-cover">
-                        <source src="AAPKI_VIDEO_KA_LINK_YAHAN_DAALEIN.mp4" type="video/mp4">
-                        Aapka browser video tag ko support nahi karta.
-                    </video>
-                    <h3 class="text-xl font-bold text-white">Invitation Video</h3>
+                
+                <!-- GitHub Invitation Video Section -->
+                <div class="glassmorphism p-6 text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full">
+                    <div class="bg-gray-800 rounded-lg mb-4 w-full h-64 overflow-hidden flex items-center justify-center relative">
+                        <!-- Yahan src ke andar apna Github wala link paste karein -->
+                        <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover">
+                            <source src="https://res.cloudinary.com/dn3bdpocs/video/upload/v1775139891/invitation_video_bwh1xw.mp4" type="video/mp4">
+                            Browser video support nahi karta.
+                        </video>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mt-auto">Invitation Video</h3>
                 </div>
-                <div class="glassmorphism p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/3c3c5a/ffffff?text=Social+Posts" alt="Regular Posts" class="rounded-lg mb-4 w-full h-48 object-cover">
-                    <h3 class="text-xl font-bold text-white">Regular Social Posts</h3>
+
+                <!-- Regular Posts -->
+                <div class="glassmorphism p-6 text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full">
+                    <img src="https://i.postimg.cc/wTQjD5Tr/Bread-Instagram-Post.png" alt="Regular Posts" class="rounded-lg mb-4 w-full h-64 object-cover">
+                    <h3 class="text-xl font-bold text-white mt-auto">Regular Social Posts</h3>
                 </div>
             </div>
         </section>
 
-        <!-- Experience & Education Section -->
+        <!-- Journey Section -->
         <section id="experience" class="py-20">
             <h2 class="section-title">My Journey</h2>
             <div class="grid md:grid-cols-2 gap-16">
@@ -255,13 +255,13 @@
                             <div class="absolute -left-[42px] top-1 w-5 h-5 bg-teal-400 rounded-full border-4 border-[#1a1a2e]"></div>
                             <p class="text-purple-400 font-semibold">2024</p>
                             <h4 class="text-xl font-bold text-white">Office Work | Aps Star Pvt. Ltd.</h4>
-                            <p class="text-gray-400">Designed and implemented a social media campaign that increased follower growth by 65% in three months. Designed visually compelling graphics for digital and print mediums.</p>
+                            <p class="text-gray-400">Increased follower growth by 65% in three months via targeted campaigns.</p>
                         </div>
                         <div class="relative">
                             <div class="absolute -left-[42px] top-1 w-5 h-5 bg-teal-400 rounded-full border-4 border-[#1a1a2e]"></div>
                             <p class="text-purple-400 font-semibold">2022</p>
                             <h4 class="text-xl font-bold text-white">Freelance Work | Part-time</h4>
-                            <p class="text-gray-400">Part-time freelancer specializing in digital marketing, graphic design, and video editing, delivering creative and impactful solutions.</p>
+                            <p class="text-gray-400">Delivered design and marketing solutions for various digital clients.</p>
                         </div>
                     </div>
                 </div>
@@ -271,31 +271,24 @@
                         <div class="relative">
                            <div class="absolute -left-[42px] top-1 w-5 h-5 bg-teal-400 rounded-full border-4 border-[#1a1a2e]"></div>
                             <p class="text-purple-400 font-semibold">2026 (Expected)</p>
-                            <h4 class="text-xl font-bold text-white">Under Graduation with B.A.</h4>
+                            <h4 class="text-xl font-bold text-white">Under Graduation (B.A.)</h4>
                             <p class="text-gray-400">Delhi University</p>
                         </div>
                         <div class="relative">
                             <div class="absolute -left-[42px] top-1 w-5 h-5 bg-teal-400 rounded-full border-4 border-[#1a1a2e]"></div>
                             <p class="text-purple-400 font-semibold">2023</p>
-                            <h4 class="text-xl font-bold text-white">Computer Advance Diploma Course</h4>
+                            <h4 class="text-xl font-bold text-white">Computer Advance Diploma</h4>
                             <p class="text-gray-400">Amroz Institute</p>
-                        </div>
-                        <div class="relative">
-                           <div class="absolute -left-[42px] top-1 w-5 h-5 bg-teal-400 rounded-full border-4 border-[#1a1a2e]"></div>
-                            <p class="text-purple-400 font-semibold">2022</p>
-                            <h4 class="text-xl font-bold text-white">Secondary High Education</h4>
-                            <p class="text-gray-400">C.B.S.C Board</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Achievements & Certifications Section -->
+        <!-- Achievements & Certifications -->
         <section id="achievements" class="py-20">
             <h2 class="section-title">Achievements & Certifications</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <!-- Achievement Item 1 -->
                 <div class="flex flex-col items-center">
                     <div class="w-24 h-24 rounded-full flex items-center justify-center bg-purple-500/20 mb-4">
                         <i data-lucide="camera" class="w-12 h-12 text-purple-300"></i>
@@ -303,7 +296,6 @@
                     <h3 class="font-bold text-xl text-white">Best Photography</h3>
                     <p class="text-gray-400">2021</p>
                 </div>
-                <!-- Achievement Item 2 -->
                 <div class="flex flex-col items-center">
                     <div class="w-24 h-24 rounded-full flex items-center justify-center bg-green-500/20 mb-4">
                         <i data-lucide="shield" class="w-12 h-12 text-green-300"></i>
@@ -311,7 +303,6 @@
                     <h3 class="font-bold text-xl text-white">Best Cadet (NCC)</h3>
                     <p class="text-gray-400">2023</p>
                 </div>
-                <!-- Achievement Item 3 -->
                 <div class="flex flex-col items-center">
                     <div class="w-24 h-24 rounded-full flex items-center justify-center bg-blue-500/20 mb-4">
                         <i data-lucide="award" class="w-12 h-12 text-blue-300"></i>
@@ -319,7 +310,6 @@
                     <h3 class="font-bold text-xl text-white">Google Ads Certified</h3>
                     <p class="text-gray-400">Certification</p>
                 </div>
-                <!-- Achievement Item 4 -->
                 <div class="flex flex-col items-center">
                     <div class="w-24 h-24 rounded-full flex items-center justify-center bg-yellow-500/20 mb-4">
                         <i data-lucide="trending-up" class="w-12 h-12 text-yellow-300"></i>
@@ -330,97 +320,49 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20">
-            <h2 class="section-title">Client Testimonials</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glassmorphism p-8">
-                    <div class="flex items-center mb-4">
-                        <img src="https://placehold.co/100x100/3c3c5a/ffffff?text=IFA" alt="India Fine Arts" class="w-16 h-16 rounded-full mr-4 border-2 border-purple-400">
-                        <div>
-                            <h4 class="text-xl font-bold text-white">INDIA FINE ARTS</h4>
-                            <p class="text-gray-400">Our Client</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 italic">"India Fine Arts Company appreciates Sohail for their outstanding freelance work, creating a captivating motion graphic video for social media. Their creativity and attention to detail significantly enhanced the brand's online presence."</p>
-                </div>
-                <div class="glassmorphism p-8">
-                     <div class="flex items-center mb-4">
-                        <img src="https://placehold.co/100x100/3c3c5a/ffffff?text=APS" alt="APS Star" class="w-16 h-16 rounded-full mr-4 border-2 border-purple-400">
-                        <div>
-                            <h4 class="text-xl font-bold text-white">APS STAR</h4>
-                            <p class="text-gray-400">Our Client</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 italic">"Aps Star commends Sohail for their exceptional creativity and dedication as a Social Media Manager, Video Maker, Digital Marketing Specialist, and Graphic Designer. Their work consistently enhanced brand engagement and achieved impressive campaign results."</p>
-                </div>
-            </div>
-        </section>
-
         <!-- Contact Section -->
         <section id="contact" class="py-20">
             <div class="text-center mb-12">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-white">Let's Create Together</h2>
-                <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">I'm always excited to discuss new projects and collaboration opportunities. Feel free to reach out!</p>
+                <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">I'm always excited to discuss new projects. Reach out below!</p>
             </div>
-            <div class="max-w-5xl mx-auto bg-gray-900/50 backdrop-blur-lg border border-gray-700/50 rounded-2xl p-8 md:p-12 grid md:grid-cols-2 gap-12">
-                <!-- Left Column: Contact Info -->
+            <div class="max-w-5xl mx-auto glassmorphism p-8 md:p-12 grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
                 <div class="space-y-8">
                     <div class="flex items-center space-x-4">
-                        <div class="bg-purple-900/50 p-3 rounded-full">
-                            <i data-lucide="phone" class="w-6 h-6 text-purple-300"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold text-white">Phone</h4>
-                            <a href="tel:+919911502635" class="text-gray-300 hover:text-purple-300 transition">+91-9911502635</a>
-                        </div>
+                        <div class="bg-purple-900/50 p-3 rounded-full"><i data-lucide="phone" class="w-6 h-6 text-purple-300"></i></div>
+                        <div><h4 class="text-xl font-bold text-white">Phone</h4><a href="tel:+919911502635" class="text-gray-300">+91-9911502635</a></div>
                     </div>
                     <div class="flex items-center space-x-4">
-                        <div class="bg-purple-900/50 p-3 rounded-full">
-                            <i data-lucide="mail" class="w-6 h-6 text-purple-300"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold text-white">Email</h4>
-                            <a href="mailto:mrsohailkhan131@gmail.com" class="text-gray-300 hover:text-purple-300 transition">mrsohailkhan131@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-purple-900/50 p-3 rounded-full">
-                            <i data-lucide="map-pin" class="w-6 h-6 text-purple-300"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold text-white">Location</h4>
-                            <p class="text-gray-300">Rohini, New Delhi, India</p>
-                        </div>
+                        <div class="bg-purple-900/50 p-3 rounded-full"><i data-lucide="mail" class="w-6 h-6 text-purple-300"></i></div>
+                        <div><h4 class="text-xl font-bold text-white">Email</h4><a href="mailto:mrsohailkhan131@gmail.com" class="text-gray-300">mrsohailkhan131@gmail.com</a></div>
                     </div>
                     <div>
                         <h4 class="text-xl font-bold text-white mb-4">Follow Me</h4>
                         <div class="flex space-x-4">
-                            <a href="https://www.instagram.com/__sohailkhan07__" target="_blank" class="text-gray-400 hover:text-purple-300 transition"><i data-lucide="instagram" class="w-7 h-7"></i></a>
-                            <a href="https://www.linkedin.com/in/sohail-khan-62b790326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-gray-400 hover:text-purple-300 transition"><i data-lucide="linkedin" class="w-7 h-7"></i></a>
-                            <a href="#" target="_blank" class="text-gray-400 hover:text-purple-300 transition"><i data-lucide="twitter" class="w-7 h-7"></i></a>
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/__sohailkhan07__" target="_blank" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-pink-500 hover:bg-pink-500 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/sohail-khan-62b790326" target="_blank" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                            </a>
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/919911502635" target="_blank" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-green-500 hover:bg-green-500 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <!-- Right Column: Form -->
+                <!-- Form -->
                 <div>
-                     <!-- Form submissions are sent to your email via FormSubmit -->
                      <form id="contact-form" action="https://formsubmit.co/mrsohailkhan131@gmail.com" method="POST" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-left mb-2 font-semibold text-white">Full Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-gray-800/70 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-left mb-2 font-semibold text-white">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required class="w-full p-3 rounded-lg bg-gray-800/70 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition">
-                        </div>
-                        <div>
-                            <label for="contact-message" class="block text-left mb-2 font-semibold text-white">Message</label>
-                            <textarea id="contact-message" name="message" rows="5" placeholder="How can I help you?" required class="w-full p-3 rounded-lg bg-gray-800/70 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"></textarea>
-                        </div>
-                        <div class="text-right">
-                             <button type="button" id="draft-email-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-lg transition mr-2">✨ Draft with AI</button>
-                             <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition">Send Message</button>
+                        <input type="text" name="name" placeholder="Full Name" required class="w-full p-3 rounded-lg bg-gray-800/70 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <input type="email" name="email" placeholder="Email Address" required class="w-full p-3 rounded-lg bg-gray-800/70 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <textarea id="contact-message" name="message" rows="4" placeholder="How can I help you?" required class="w-full p-3 rounded-lg bg-gray-800/70 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                        <div class="flex justify-end items-center">
+                            <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-lg transition">Send</button>
                         </div>
                     </form>
                 </div>
@@ -431,123 +373,61 @@
 
     <!-- Footer -->
     <footer class="text-center py-6 border-t border-gray-800">
-        <p class="text-gray-500">&copy; 2025 Sohail Khan. Designed with &hearts; and code.</p>
+        <p class="text-gray-500">&copy; 2025 Sohail Khan. Digital Marketing Portfolio.</p>
     </footer>
 
-    <!-- Loading Modal -->
+    <!-- Modals -->
     <div id="loading-modal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <div class="loader"></div>
-            <p class="mt-4 text-white">Generating with AI...</p>
-        </div>
+        <div class="modal-content"><div class="loader"></div><p class="mt-4 text-white">Processing...</p></div>
     </div>
-    
-    <!-- Message Modal -->
     <div id="message-modal" class="modal-overlay hidden">
-        <div id="message-modal-content" class="modal-content">
-             <p id="message-text" class="text-white"></p>
-             <button id="close-message-modal" class="mt-4 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg">Close</button>
-        </div>
+        <div class="modal-content"><p id="message-text" class="text-white"></p><button id="close-modal" class="mt-4 bg-purple-600 py-2 px-4 rounded">Close</button></div>
     </div>
-
 
     <script type="module">
-        // --- Basic Setup ---
         lucide.createIcons();
 
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('bg-[#1a1a2e]/80', 'backdrop-blur-sm', 'shadow-lg');
-            } else {
-                header.classList.remove('bg-[#1a1a2e]/80', 'backdrop-blur-sm', 'shadow-lg');
-            }
+            if (window.scrollY > 50) header.classList.add('bg-[#1a1a2e]/90', 'shadow-lg');
+            else header.classList.remove('bg-[#1a1a2e]/90', 'shadow-lg');
         });
 
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+        // Mobile Menu
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        btn.onclick = () => menu.classList.toggle('hidden');
+        document.querySelectorAll('.mobile-menu-link').forEach(l => l.onclick = () => menu.classList.add('hidden'));
 
-        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        mobileMenuLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-
-        // --- Gemini API Integration ---
-
-        const API_KEY = ""; // Leave empty, it will be handled by the environment
+        // Gemini API Setup
+        const API_KEY = ""; 
         const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${API_KEY}`;
         
         const loadingModal = document.getElementById('loading-modal');
-        const messageModal = document.getElementById('message-modal');
-        const messageText = document.getElementById('message-text');
-        const closeMessageModalBtn = document.getElementById('close-message-modal');
+        const msgModal = document.getElementById('message-modal');
+        const msgText = document.getElementById('message-text');
 
-        const showLoading = () => loadingModal.classList.remove('hidden');
-        const hideLoading = () => loadingModal.classList.add('hidden');
-        
-        const showMessage = (message) => {
-            messageText.textContent = message;
-            messageModal.classList.remove('hidden');
-        }
-        closeMessageModalBtn.addEventListener('click', () => messageModal.classList.add('hidden'));
+        const showLoading = (s) => s ? loadingModal.classList.remove('hidden') : loadingModal.classList.add('hidden');
+        const showMsg = (m) => { msgText.textContent = m; msgModal.classList.remove('hidden'); }
+        document.getElementById('close-modal').onclick = () => msgModal.classList.add('hidden');
 
-
-        // Function to call Gemini API with exponential backoff
-        async function callGemini(prompt, maxRetries = 3) {
-            showLoading();
-            let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-            const payload = { contents: chatHistory };
-
-            for (let i = 0; i < maxRetries; i++) {
-                try {
-                    const response = await fetch(API_URL, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-
-                    const result = await response.json();
-                    hideLoading();
-                    
-                    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content.parts[0].text) {
-                        return result.candidates[0].content.parts[0].text;
-                    } else {
-                        throw new Error("Invalid response structure from API.");
-                    }
-
-                } catch (error) {
-                    console.error(`Attempt ${i + 1} failed:`, error);
-                    if (i === maxRetries - 1) {
-                        hideLoading();
-                        showMessage("Sorry, the AI is unable to respond right now. Please try again later.");
-                        return null;
-                    }
-                    await new Promise(resolve => setTimeout(resolve, (2 ** i) * 1000)); // Exponential backoff
-                }
+        async function callGemini(prompt) {
+            showLoading(true);
+            try {
+                const res = await fetch(API_URL, {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+                const data = await res.json();
+                showLoading(false);
+                return data.candidates[0].content.parts[0].text;
+            } catch (e) {
+                showLoading(false);
+                showMsg("AI Error. Please try again.");
+                return null;
             }
         }
 
-        // --- Contact Form AI Draft ---
-        const contactMessageTextarea = document.getElementById('contact-message');
-        const draftEmailBtn = document.getElementById('draft-email-btn');
-        
-        draftEmailBtn.addEventListener('click', async () => {
-            const currentMessage = contactMessageTextarea.value.trim();
-            if (currentMessage.length < 10) {
-                showMessage("Please write a few words about your project first.");
-                return;
-            }
-            const prompt = `A potential client wants to contact a digital marketer. Their initial thought is: "${currentMessage}". Rewrite this into a clear, professional, and friendly outreach email. The email should briefly state their purpose, mention what they are looking for, and suggest the next step (like a brief call). Do not include a subject line or signature.`;
-            
-            const draftedEmail = await callGemini(prompt);
-            if (draftedEmail) {
-                contactMessageTextarea.value = draftedEmail;
-            }
-        });
-        
     </script>
 </body>
 </html>
